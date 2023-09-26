@@ -15,11 +15,12 @@ import (
 // Notes:
 //
 // - All handler, middleware and other implementations depend on the contracts predefined by the framework and its echo.Context.
-// - Has several boilerplate already implemented, such as JSON encoding/decoding
+// - Has several boilerplate already implemented by echo.Context, such reading JSON from a request body and returning a JSON
+// response with an HTTP status code
 func main() {
-	router := echo.New()
+	e := echo.New()
 
-	router.Use(func(next echo.HandlerFunc) echo.HandlerFunc {
+	e.Use(func(next echo.HandlerFunc) echo.HandlerFunc {
 		return echo.HandlerFunc(func(c echo.Context) error {
 			r := c.Request()
 			fmt.Printf("got request: %s %s\n", r.Method, r.RequestURI)
@@ -27,7 +28,7 @@ func main() {
 		})
 	})
 
-	router.POST("/foo", func(c echo.Context) error {
+	e.POST("/foo", func(c echo.Context) error {
 		var s generic.Struct
 
 		if err := c.Bind(&s); err != nil {
@@ -37,7 +38,7 @@ func main() {
 		return c.JSON(http.StatusNoContent, nil)
 	})
 
-	server := httptest.NewServer(router)
+	server := httptest.NewServer(e)
 
 	client := server.Client()
 
