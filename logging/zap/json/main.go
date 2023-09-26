@@ -12,8 +12,10 @@ import (
 
 func main() {
 	encoder := zapcore.NewJSONEncoder(zapcore.EncoderConfig{
-		LevelKey:   "level",
-		MessageKey: "msg",
+		LevelKey:     "level",
+		MessageKey:   "msg",
+		CallerKey:    "caller",
+		EncodeCaller: zapcore.ShortCallerEncoder,
 		// Encode log level as its string value in uppercase
 		EncodeLevel: zapcore.CapitalLevelEncoder,
 		// Encode log timestamp as its RFC3339Nano string value
@@ -25,6 +27,7 @@ func main() {
 	core := zapcore.NewCore(encoder, zapcore.AddSync(os.Stderr), zapcore.DebugLevel)
 
 	logger := zap.New(core,
+		zap.AddCaller(),
 		zap.Fields(
 			zap.String("default", "banana"),
 
@@ -33,15 +36,15 @@ func main() {
 		),
 	)
 
-	// {"level":"DEBUG","time":"2023-08-25T12:34:56.789101112Z","msg":"logging at DEBUG level","default":"banana"}
+	// {"level":"DEBUG","caller":"json/main.go:40","msg":"logging at DEBUG level","default":"banana","time":"2023-08-25T12:34:56.789101112Z"}
 	logger.Debug("logging at DEBUG level")
 
-	// {"level":"INFO","time":"2023-08-25T12:34:56.789101112Z","msg":"logging at INFO level","default":"banana","map":{"foo":"bar","baz":1}}
+	// {"level":"INFO","caller":"json/main.go:43","msg":"logging at INFO level","default":"banana","time":"2023-08-25T12:34:56.789101112Z","map":{"foo":"bar","baz":1}}
 	logger.Info("logging at INFO level", zap.Dict("map", zap.String("foo", "bar"), zap.Int("baz", 1)))
 
-	// {"level":"WARN","time":"2023-08-25T12:34:56.789101112Z","msg":"logging at WARN level","default":"banana","foo":"1h23m45s"}
+	// {"level":"WARN","caller":"json/main.go:46","msg":"logging at WARN level","default":"banana","time":"2023-08-25T12:34:56.789101112Z","foo":"1h23m45s"}
 	logger.Warn("logging at WARN level", zap.Duration("foo", generic.Duration))
 
-	// {"level":"ERROR","time":"2023-08-25T12:34:56.789101112Z","msg":"logging at ERROR level","default":"banana","error":"some error"}
+	// {"level":"ERROR","caller":"json/main.go:49","msg":"logging at ERROR level","default":"banana","time":"2023-08-25T12:34:56.789101112Z","error":"some error"}
 	logger.Error("logging at ERROR level", zap.Any("error", generic.Error))
 }
