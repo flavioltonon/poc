@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-func HTTPHandler(w http.ResponseWriter, r *http.Request) {
+var HTTPHandler = func(w http.ResponseWriter, r *http.Request) {
 	var s Struct
 
 	if err := json.NewDecoder(r.Body).Decode(&s); err != nil {

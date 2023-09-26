@@ -13,7 +13,7 @@ import (
 
 func main() {
 	router := chi.NewRouter()
-
+	router.Use(generic.HTTPMiddleware)
 	router.Post("/foo", generic.HTTPHandler)
 
 	server := httptest.NewServer(router)

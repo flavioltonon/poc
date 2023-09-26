@@ -13,7 +13,7 @@ import (
 
 func main() {
 	router := mux.NewRouter()
-
+	router.Use(generic.HTTPMiddleware)
 	router.HandleFunc("/foo", generic.HTTPHandler).Methods("POST")
 
 	server := httptest.NewServer(router)
