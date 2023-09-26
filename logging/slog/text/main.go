@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	handler := slog.NewJSONHandler(os.Stderr, &slog.HandlerOptions{
+	handler := slog.NewTextHandler(os.Stderr, &slog.HandlerOptions{
 		// Adds a key with the source of the log
 		AddSource: false,
 
@@ -33,15 +33,15 @@ func main() {
 
 	logger := slog.New(handler)
 
-	// {"time":"2023-08-25T12:34:56.789101112Z","level":"DEBUG","msg":"logging at DEBUG level"}
+	// time=2023-08-25T12:34:56.789Z level=DEBUG msg="logging at DEBUG level"
 	logger.Debug("logging at DEBUG level")
 
-	// {"time":"2023-08-25T12:34:56.789101112Z","level":"INFO","msg":"logging at INFO level","some_group":{"foo":"bar","baz":1}}
+	// time=2023-08-25T12:34:56.789Z level=INFO msg="logging at INFO level" some_group.foo=bar some_group.baz=1
 	logger.Info("logging at INFO level", slog.Group("some_group", slog.String("foo", "bar"), slog.Int("baz", 1)))
 
-	// {"time":"2023-08-25T12:34:56.789101112Z","level":"WARN","msg":"logging at WARN level","foo":"1h23m45s"}
+	// time=2023-08-25T12:34:56.789Z level=WARN msg="logging at WARN level" foo=1h23m45s
 	logger.Warn("logging at WARN level", slog.Duration("foo", generic.Duration))
 
-	// {"time":"2023-08-25T12:34:56.789101112Z","level":"ERROR","msg":"logging at ERROR level","error":"some error"}
+	// time=2023-08-25T12:34:56.789Z level=ERROR msg="logging at ERROR level" error="some error"
 	logger.Error("logging at ERROR level", slog.Any("error", generic.Error))
 }
