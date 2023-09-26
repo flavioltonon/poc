@@ -11,6 +11,9 @@ import (
 	"github.com/go-chi/chi/v5"
 )
 
+// Notes:
+//
+// - Simple, compatible with Go's standard library definitions (e.g. http.Handler, http.HandlerFunc)
 func main() {
 	router := chi.NewRouter()
 	router.Use(generic.HTTPMiddleware)

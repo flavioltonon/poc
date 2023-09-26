@@ -11,6 +11,9 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// Notes:
+//
+// - Simple, compatible with Go's standard library definitions (e.g. http.Handler, http.HandlerFunc)
 func main() {
 	router := mux.NewRouter()
 	router.Use(generic.HTTPMiddleware)
