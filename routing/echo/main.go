@@ -23,7 +23,7 @@ func main() {
 		return echo.HandlerFunc(func(c echo.Context) error {
 			r := c.Request()
 			fmt.Printf("got request: %s %s\n", r.Method, r.RequestURI)
-			return nil
+			return next(c)
 		})
 	})
 
