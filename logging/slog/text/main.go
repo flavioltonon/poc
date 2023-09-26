@@ -33,11 +33,11 @@ func main() {
 
 	logger := slog.New(handler)
 
-	// time=2023-08-25T12:34:56.789Z level=DEBUG msg="logging at DEBUG level"
+	// time=2023-08-25T12:34:56.789Z level=DEBUG msg="logging at DEBUG level" map="map[baz:1 foo:bar]"
 	logger.Debug("logging at DEBUG level")
 
-	// time=2023-08-25T12:34:56.789Z level=INFO msg="logging at INFO level" some_group.foo=bar some_group.baz=1
-	logger.Info("logging at INFO level", slog.Group("some_group", slog.String("foo", "bar"), slog.Int("baz", 1)))
+	// time=2023-08-25T12:34:56.789Z level=INFO msg="logging at INFO level" map.foo=bar map.baz=1
+	logger.Info("logging at INFO level", slog.Group("map", slog.String("foo", "bar"), slog.Int("baz", 1)))
 
 	// time=2023-08-25T12:34:56.789Z level=WARN msg="logging at WARN level" foo=1h23m45s
 	logger.Warn("logging at WARN level", slog.Duration("foo", generic.Duration))
