@@ -19,13 +19,14 @@ import (
 
 func main() {
 	var (
-		ctx                   = context.Background()
 		credentialsFilename   = os.Getenv("GOOGLE_APPLICATION_CREDENTIALS_FILENAME")
 		queueName             = os.Getenv("GOOGLE_CLOUD_TASKS_QUEUE_NAME")
 		maxConcurrentRequests = 100
 		tasksToBeCreated      = 10000
 		workerURL             = os.Getenv("GOOGLE_CLOUD_TASKS_WORKER_URL")
 	)
+
+	ctx := context.Background()
 
 	client, err := createCloudTasksClient(ctx, credentialsFilename, queueName, workerURL)
 	if err != nil {
