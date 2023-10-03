@@ -4,6 +4,7 @@ go 1.21.1
 
 require (
 	cloud.google.com/go/cloudtasks v1.12.1
+	cloud.google.com/go/scheduler v1.10.1
 	github.com/gin-gonic/gin v1.9.1
 	github.com/go-chi/chi/v5 v5.0.10
 	github.com/google/uuid v1.3.1
