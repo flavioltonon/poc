@@ -14,23 +14,12 @@ import (
 )
 
 var (
-	// credentialsFilename is the path to the a Google Cloud service account JSON credentials file
 	credentialsFilename = os.Getenv("GOOGLE_APPLICATION_CREDENTIALS_FILENAME")
-
-	// projectID is the ID of the project where the job is being created
-	projectID = os.Getenv("GOOGLE_CLOUD_SCHEDULER_PROJECT_ID")
-
-	// locationID is the ID of the location where the job should be created (e.g. southamerica-east1)
-	locationID = os.Getenv("GOOGLE_CLOUD_SCHEDULER_LOCATION_ID")
-
-	// httpTargetURL is the URL to the HTTP target of the scheduler jobs
-	httpTargetURL = os.Getenv("GOOGLE_CLOUD_SCHEDULER_HTTP_TARGET_URL")
-
-	// jobSchedule is the cron tab representing the schedule for the job (e.g. "* * * * *" means "every minute")
-	jobSchedule = os.Getenv("GOOGLE_CLOUD_SCHEDULER_JOB_SCHEDULE")
-
-	// jobTimezone must be a time zone name from the tz database (e.g. America/Sao_Paulo)
-	jobTimezone = os.Getenv("GOOGLE_CLOUD_SCHEDULER_JOB_TIMEZONE")
+	projectID           = os.Getenv("GOOGLE_CLOUD_SCHEDULER_PROJECT_ID")
+	locationID          = os.Getenv("GOOGLE_CLOUD_SCHEDULER_LOCATION_ID")
+	httpTargetURL       = os.Getenv("GOOGLE_CLOUD_SCHEDULER_HTTP_TARGET_URL")
+	jobSchedule         = os.Getenv("GOOGLE_CLOUD_SCHEDULER_JOB_SCHEDULE")
+	jobTimezone         = os.Getenv("GOOGLE_CLOUD_SCHEDULER_JOB_TIMEZONE")
 )
 
 func main() {
