@@ -31,7 +31,7 @@ func main() {
 		fmt.Printf("got request: %s %s\n", r.Method, r.RequestURI)
 	})
 
-	engine.POST("/foo", func(ctx *gin.Context) {
+	engine.POST(generic.HTTPRoute, func(ctx *gin.Context) {
 		var s generic.Struct
 
 		if err := ctx.Bind(&s); err != nil {
@@ -52,7 +52,7 @@ func main() {
 
 	b, _ := json.Marshal(generic.Object)
 
-	response, _ := client.Post(server.URL+"/foo", "application/json", bytes.NewReader(b))
+	response, _ := client.Post(server.URL+generic.HTTPRoute, "application/json", bytes.NewReader(b))
 
 	// response.StatusCode: 204
 	fmt.Printf("response.StatusCode: %d\n", response.StatusCode)

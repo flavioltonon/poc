@@ -17,7 +17,7 @@ import (
 func main() {
 	router := mux.NewRouter()
 	router.Use(generic.HTTPMiddleware)
-	router.HandleFunc("/foo", generic.HTTPHandler).Methods("POST")
+	router.HandleFunc(generic.HTTPRoute, generic.HTTPHandler).Methods("POST")
 
 	server := httptest.NewServer(router)
 
@@ -25,7 +25,7 @@ func main() {
 
 	b, _ := json.Marshal(generic.Object)
 
-	response, _ := client.Post(server.URL+"/foo", "application/json", bytes.NewReader(b))
+	response, _ := client.Post(server.URL+generic.HTTPRoute, "application/json", bytes.NewReader(b))
 
 	// response.StatusCode: 204
 	fmt.Printf("response.StatusCode: %d\n", response.StatusCode)
