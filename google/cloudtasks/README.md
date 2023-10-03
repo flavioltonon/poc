@@ -1,6 +1,8 @@
 # Google Cloud Tasks
 
-## Client
+## Definitions
+
+### Client
 
 Creates tasks on a Google Cloud Tasks queue.
 
@@ -12,7 +14,7 @@ Inputs:
 - tasksToBeCreated: number of tasks expected to be created
 - workerURL: URL of the worker that should receive the task
 
-## Server
+### Server
 
 Exposes an endpoint for receiving tasks from a Google Cloud Tasks queue and calculates the throughput of tasks received (RPS).
 
@@ -25,3 +27,9 @@ P.S: Google Cloud Tasks requires a public endpoint to send tasks. One way of ach
 - Any changes made to the queue are applied immediately. This includes changes in throughput levels, retry limits and other available configurations.
 - When a queue is stopped, the server will stop receiving tasks almost immediately. The client remains able to send new tasks to the queue.
 - The maximum throughput defined in the queue is not reached instantaneously. Instead of that, it progresses little by little, avoiding resource consumption spikes (see `server/results.txt`)
+
+## Running the example
+
+Provide the required configuration described in main.go, then run
+
+> go run main.go
