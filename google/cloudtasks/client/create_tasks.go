@@ -4,7 +4,6 @@ import (
 	"context"
 	"encoding/json"
 	"log"
-	"path"
 	"time"
 
 	"poc/shared/generic"
@@ -19,12 +18,10 @@ import (
 func CreateTasks(credentialsFilename, queueName, workerURL string, maxConcurrentRequests, tasksToBeCreated int) {
 	ctx := context.Background()
 
-	client, err := createCloudTasksClient(ctx, credentialsFilename, queueName, workerURL)
+	taskCreator, err := newTaskCreator(ctx, credentialsFilename, queueName, workerURL)
 	if err != nil {
 		log.Fatalf("failed to create Cloud Tasks client: %v\n", err)
 	}
-
-	defer client.close()
 
 	now := time.Now()
 
@@ -40,7 +37,7 @@ func CreateTasks(credentialsFilename, queueName, workerURL string, maxConcurrent
 				<-semaphore
 			}()
 
-			taskID, err := client.createTask(ctx, generic.Object)
+			taskID, err := taskCreator.createTask(ctx, generic.Object)
 			if err != nil {
 				log.Fatalf("failed to create task: %v\n", err)
 			}
@@ -57,13 +54,13 @@ func CreateTasks(credentialsFilename, queueName, workerURL string, maxConcurrent
 	log.Printf("created %d tasks in %s\n", tasksToBeCreated, took)
 }
 
-type gRPCClient struct {
+type taskCreator struct {
 	client    *cloudtasks.Client
 	queueName string
 	workerURL string
 }
 
-func createCloudTasksClient(ctx context.Context, credentialsFilename, queueName, workerURL string) (*gRPCClient, error) {
+func newTaskCreator(ctx context.Context, credentialsFilename, queueName, workerURL string) (*taskCreator, error) {
 	cctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 
@@ -72,18 +69,14 @@ func createCloudTasksClient(ctx context.Context, credentialsFilename, queueName,
 		return nil, err
 	}
 
-	return &gRPCClient{
+	return &taskCreator{
 		client:    client,
 		queueName: queueName,
 		workerURL: workerURL,
 	}, nil
 }
 
-func (c *gRPCClient) close() error {
-	return c.client.Close()
-}
-
-func (c *gRPCClient) createTask(ctx context.Context, data generic.Struct) (string, error) {
+func (c *taskCreator) createTask(ctx context.Context, data generic.Struct) (string, error) {
 	cctx, cancel := context.WithTimeout(ctx, 30*time.Second)
 	defer cancel()
 
@@ -115,8 +108,4 @@ func (c *gRPCClient) createTask(ctx context.Context, data generic.Struct) (strin
 	}
 
 	return task.GetName(), nil
-}
-
-func (c *gRPCClient) createTaskName(taskID string) string {
-	return path.Join(c.queueName, "tasks", taskID)
 }
