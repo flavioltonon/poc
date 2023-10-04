@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"os"
 	"poc/google/cloudtasks/client"
 	"poc/google/cloudtasks/server"
@@ -8,6 +9,7 @@ import (
 
 var (
 	credentialsFilename   = os.Getenv("GOOGLE_APPLICATION_CREDENTIALS_FILENAME")
+	serviceAccountEmail   = os.Getenv("GOOGLE_CLOUD_SERVICE_ACCOUNT_EMAIL")
 	maxConcurrentRequests = 100
 	queueName             = os.Getenv("GOOGLE_CLOUD_TASKS_QUEUE_NAME")
 	showBodyParsingLogs   = false
@@ -16,6 +18,9 @@ var (
 )
 
 func main() {
-	client.CreateTasks(credentialsFilename, queueName, workerURL, maxConcurrentRequests, tasksToBeCreated)
-	server.ListenAndServe(showBodyParsingLogs)
+	client.CreateTasks(credentialsFilename, serviceAccountEmail, queueName, workerURL, maxConcurrentRequests, tasksToBeCreated)
+
+	if err := server.ListenAndServe(showBodyParsingLogs); err != nil {
+		log.Fatalf("failed to listen and serve: %v\n", err)
+	}
 }

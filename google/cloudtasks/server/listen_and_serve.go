@@ -1,7 +1,9 @@
 package server
 
 import (
+	"context"
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"time"
@@ -11,12 +13,22 @@ import (
 	"poc/shared/throughput"
 
 	"github.com/gorilla/mux"
+	"google.golang.org/api/idtoken"
 )
 
-func ListenAndServe(showBodyParsingLogs bool) {
+func ListenAndServe(showBodyParsingLogs bool) error {
+	ctx := context.Background()
+
+	tokenValidator, err := idtoken.NewValidator(ctx)
+	if err != nil {
+		return fmt.Errorf("failed to create token validator: %w", err)
+	}
+
 	throughputCalculator := throughput.NewCalculator()
 
 	router := mux.NewRouter()
+
+	router.Use(middleware.ValidateGoogleIDToken(tokenValidator))
 
 	router.Use(middleware.CalculateThroughput(throughputCalculator))
 
@@ -35,5 +47,5 @@ func ListenAndServe(showBodyParsingLogs bool) {
 		}).
 		Methods("POST")
 
-	http.ListenAndServe(":8080", router)
+	return http.ListenAndServe(":8080", router)
 }

@@ -3,6 +3,7 @@ package client
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"log"
 	"time"
 
@@ -15,10 +16,10 @@ import (
 	"google.golang.org/protobuf/types/known/timestamppb"
 )
 
-func CreateTasks(credentialsFilename, queueName, workerURL string, maxConcurrentRequests, tasksToBeCreated int) {
+func CreateTasks(credentialsFilename, serviceAccountEmail, queueName, workerURL string, maxConcurrentRequests, tasksToBeCreated int) {
 	ctx := context.Background()
 
-	taskCreator, err := newTaskCreator(ctx, credentialsFilename, queueName, workerURL)
+	taskCreator, err := newTaskCreator(ctx, credentialsFilename, serviceAccountEmail, queueName, workerURL)
 	if err != nil {
 		log.Fatalf("failed to create Cloud Tasks client: %v\n", err)
 	}
@@ -55,24 +56,26 @@ func CreateTasks(credentialsFilename, queueName, workerURL string, maxConcurrent
 }
 
 type taskCreator struct {
-	client    *cloudtasks.Client
-	queueName string
-	workerURL string
+	cloudTasksClient    *cloudtasks.Client
+	serviceAccountEmail string
+	queueName           string
+	workerURL           string
 }
 
-func newTaskCreator(ctx context.Context, credentialsFilename, queueName, workerURL string) (*taskCreator, error) {
+func newTaskCreator(ctx context.Context, credentialsFilename, serviceAccountEmail, queueName, workerURL string) (*taskCreator, error) {
 	cctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 
-	client, err := cloudtasks.NewClient(cctx, option.WithCredentialsFile(credentialsFilename))
+	cloudTasksClient, err := cloudtasks.NewClient(cctx, option.WithCredentialsFile(credentialsFilename))
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to create Cloud Tasks client: %w", err)
 	}
 
 	return &taskCreator{
-		client:    client,
-		queueName: queueName,
-		workerURL: workerURL,
+		cloudTasksClient:    cloudTasksClient,
+		serviceAccountEmail: serviceAccountEmail,
+		queueName:           queueName,
+		workerURL:           workerURL,
 	}, nil
 }
 
@@ -96,13 +99,18 @@ func (c *taskCreator) createTask(ctx context.Context, data generic.Struct) (stri
 						"Content-Type": "application/json",
 					},
 					Body: body,
+					AuthorizationHeader: &cloudtaskspb.HttpRequest_OidcToken{
+						OidcToken: &cloudtaskspb.OidcToken{
+							ServiceAccountEmail: c.serviceAccountEmail,
+						},
+					},
 				},
 			},
 			CreateTime: timestamppb.Now(),
 		},
 	}
 
-	task, err := c.client.CreateTask(cctx, request)
+	task, err := c.cloudTasksClient.CreateTask(cctx, request)
 	if err != nil {
 		return "", err
 	}
