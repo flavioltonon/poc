@@ -1,3 +1,3 @@
 *[Some title]*
 
-Message *$message_name* ($message_id) sent successfully!
+Message *{{.message_name}}* ({{.message_id}}) sent successfully!

@@ -1,31 +1,36 @@
 package main
 
 import (
+	"bytes"
 	"log"
 	"os"
+	"text/template"
 
 	"poc/messaging/slack/sender"
-	"poc/shared/template"
 )
 
 var (
 	token            = os.Getenv("SLACK_BOT_USER_OAUTH_TOKEN")
 	channelID        = os.Getenv("SLACK_BOT_TARGET_CHANNEL_ID")
-	templateFilepath = "../../shared/assets/templates/message.md"
+	templateFilepath = "../../shared/assets/templates/template.md"
 )
 
 func main() {
-	t, err := template.FromFile(templateFilepath)
+	t, err := template.ParseFiles(templateFilepath)
 	if err != nil {
-		log.Fatalf("failed to create template: %v\n", err)
+		log.Fatalf("failed to parse template: %v\n", err)
 	}
 
-	message := t.Build(template.Fields{
+	buffer := new(bytes.Buffer)
+
+	if err := t.Execute(buffer, map[string]string{
 		"message_name": "some-message-name",
 		"message_id":   "some-message-id",
-	})
+	}); err != nil {
+		log.Fatalf("failed to execute template: %v\n", err)
+	}
 
-	if err := sender.SendMessage(token, channelID, message); err != nil {
+	if err := sender.SendMessage(token, channelID, buffer.String()); err != nil {
 		log.Fatalf("failed to send message: %v\n", err)
 	}
 }
