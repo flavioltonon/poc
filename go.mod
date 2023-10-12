@@ -7,10 +7,10 @@ require (
 	cloud.google.com/go/scheduler v1.10.1
 	github.com/gin-gonic/gin v1.9.1
 	github.com/go-chi/chi/v5 v5.0.10
-	github.com/google/uuid v1.3.1
 	github.com/gorilla/mux v1.8.0
 	github.com/labstack/echo/v4 v4.11.1
 	github.com/rs/zerolog v1.31.0
+	github.com/slack-go/slack v0.12.3
 	go.uber.org/zap v1.26.0
 	golang.org/x/sync v0.2.0
 	google.golang.org/api v0.126.0
@@ -34,8 +34,10 @@ require (
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/google/go-cmp v0.5.9 // indirect
 	github.com/google/s2a-go v0.1.4 // indirect
+	github.com/google/uuid v1.3.1 // indirect
 	github.com/googleapis/enterprise-certificate-proxy v0.2.3 // indirect
 	github.com/googleapis/gax-go/v2 v2.11.0 // indirect
+	github.com/gorilla/websocket v1.5.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.5 // indirect
 	github.com/labstack/gommon v0.4.0 // indirect
