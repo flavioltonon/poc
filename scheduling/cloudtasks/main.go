@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 	"os"
-	"poc/google/cloudtasks/client"
-	"poc/google/cloudtasks/server"
+	"poc/scheduling/cloudtasks/client"
+	"poc/scheduling/cloudtasks/server"
 )
 
 var (
