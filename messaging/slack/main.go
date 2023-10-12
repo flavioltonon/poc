@@ -11,7 +11,7 @@ import (
 var (
 	token            = os.Getenv("SLACK_BOT_USER_OAUTH_TOKEN")
 	channelID        = os.Getenv("SLACK_BOT_TARGET_CHANNEL_ID")
-	templateFilepath = "./assets/templates/message.md"
+	templateFilepath = "../../shared/assets/templates/message.md"
 )
 
 func main() {
