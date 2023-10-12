@@ -10,9 +10,11 @@ import (
 )
 
 var (
-	token            = os.Getenv("SLACK_BOT_USER_OAUTH_TOKEN")
-	channelID        = os.Getenv("SLACK_BOT_TARGET_CHANNEL_ID")
-	templateFilepath = "../../shared/assets/templates/template.md"
+	token     = os.Getenv("SLACK_BOT_USER_OAUTH_TOKEN")
+	channelID = os.Getenv("SLACK_BOT_TARGET_CHANNEL_ID")
+
+	// Path to a mrkdwn template (not Markdown)
+	templateFilepath = "./assets/templates/template.md"
 )
 
 func main() {
