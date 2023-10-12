@@ -28,6 +28,7 @@ func main() {
 	if err := t.Execute(buffer, map[string]string{
 		"message_name": "some-message-name",
 		"message_id":   "some-message-id",
+		"some_url":     "https://google.com",
 	}); err != nil {
 		log.Fatalf("failed to execute template: %v\n", err)
 	}
