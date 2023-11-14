@@ -44,7 +44,7 @@ The example logs the current throughput every second.
 [2023-11-14T18:54:34-03:00] current throughput: 1.00 RPS
 [2023-11-14T18:54:35-03:00] current throughput: 1.00 RPS
 
-3) Limit: rate.Limit(1.0 / 3.0 /* RPS */) | Burst: 100
+3) Limit: rate.Limit(1.0 / 3.0 /* RPS */) | Burst: 1
 
 [2023-11-14T18:56:15-03:00] current throughput: 1.00 RPS
 [2023-11-14T18:56:16-03:00] current throughput: 0.00 RPS
