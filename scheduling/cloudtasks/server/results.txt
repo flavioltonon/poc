@@ -1,126 +1,126 @@
 # Maximum throughput set as 50 RPS on the queue. This is how it progressed:
 
-[2023-09-30T00:11:53-03:00] current throughput: 0 RPS
-[2023-09-30T00:11:54-03:00] current throughput: 0 RPS
-[2023-09-30T00:11:55-03:00] current throughput: 0 RPS
-[2023-09-30T00:11:56-03:00] current throughput: 0 RPS
-[2023-09-30T00:11:57-03:00] current throughput: 0 RPS
-[2023-09-30T00:11:58-03:00] current throughput: 0 RPS
-[2023-09-30T00:11:59-03:00] current throughput: 1 RPS
-[2023-09-30T00:12:00-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:01-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:02-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:03-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:04-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:05-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:06-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:07-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:08-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:09-03:00] current throughput: 1 RPS
-[2023-09-30T00:12:10-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:11-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:12-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:13-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:14-03:00] current throughput: 1 RPS
-[2023-09-30T00:12:15-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:16-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:17-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:18-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:19-03:00] current throughput: 1 RPS
-[2023-09-30T00:12:20-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:21-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:22-03:00] current throughput: 1 RPS
-[2023-09-30T00:12:23-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:24-03:00] current throughput: 1 RPS
-[2023-09-30T00:12:25-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:26-03:00] current throughput: 1 RPS
-[2023-09-30T00:12:27-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:28-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:29-03:00] current throughput: 1 RPS
-[2023-09-30T00:12:30-03:00] current throughput: 1 RPS
-[2023-09-30T00:12:31-03:00] current throughput: 1 RPS
-[2023-09-30T00:12:32-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:33-03:00] current throughput: 1 RPS
-[2023-09-30T00:12:34-03:00] current throughput: 1 RPS
-[2023-09-30T00:12:35-03:00] current throughput: 1 RPS
-[2023-09-30T00:12:36-03:00] current throughput: 1 RPS
-[2023-09-30T00:12:37-03:00] current throughput: 0 RPS
-[2023-09-30T00:12:38-03:00] current throughput: 1 RPS
-[2023-09-30T00:12:39-03:00] current throughput: 1 RPS
-[2023-09-30T00:12:40-03:00] current throughput: 2 RPS
-[2023-09-30T00:12:41-03:00] current throughput: 2 RPS
-[2023-09-30T00:12:42-03:00] current throughput: 1 RPS
-[2023-09-30T00:12:43-03:00] current throughput: 2 RPS
-[2023-09-30T00:12:44-03:00] current throughput: 2 RPS
-[2023-09-30T00:12:45-03:00] current throughput: 1 RPS
-[2023-09-30T00:12:46-03:00] current throughput: 2 RPS
-[2023-09-30T00:12:47-03:00] current throughput: 1 RPS
-[2023-09-30T00:12:48-03:00] current throughput: 2 RPS
-[2023-09-30T00:12:49-03:00] current throughput: 4 RPS
-[2023-09-30T00:12:50-03:00] current throughput: 3 RPS
-[2023-09-30T00:12:51-03:00] current throughput: 3 RPS
-[2023-09-30T00:12:52-03:00] current throughput: 3 RPS
-[2023-09-30T00:12:53-03:00] current throughput: 3 RPS
-[2023-09-30T00:12:54-03:00] current throughput: 4 RPS
-[2023-09-30T00:12:55-03:00] current throughput: 3 RPS
-[2023-09-30T00:12:56-03:00] current throughput: 3 RPS
-[2023-09-30T00:12:57-03:00] current throughput: 3 RPS
-[2023-09-30T00:12:58-03:00] current throughput: 5 RPS
-[2023-09-30T00:12:59-03:00] current throughput: 7 RPS
-[2023-09-30T00:13:00-03:00] current throughput: 6 RPS
-[2023-09-30T00:13:01-03:00] current throughput: 7 RPS
-[2023-09-30T00:13:02-03:00] current throughput: 6 RPS
-[2023-09-30T00:13:03-03:00] current throughput: 6 RPS
-[2023-09-30T00:13:04-03:00] current throughput: 7 RPS
-[2023-09-30T00:13:05-03:00] current throughput: 6 RPS
-[2023-09-30T00:13:06-03:00] current throughput: 7 RPS
-[2023-09-30T00:13:07-03:00] current throughput: 6 RPS
-[2023-09-30T00:13:08-03:00] current throughput: 11 RPS
-[2023-09-30T00:13:09-03:00] current throughput: 13 RPS
-[2023-09-30T00:13:10-03:00] current throughput: 13 RPS
-[2023-09-30T00:13:11-03:00] current throughput: 13 RPS
-[2023-09-30T00:13:12-03:00] current throughput: 13 RPS
-[2023-09-30T00:13:13-03:00] current throughput: 12 RPS
-[2023-09-30T00:13:14-03:00] current throughput: 13 RPS
-[2023-09-30T00:13:15-03:00] current throughput: 13 RPS
-[2023-09-30T00:13:16-03:00] current throughput: 13 RPS
-[2023-09-30T00:13:17-03:00] current throughput: 13 RPS
-[2023-09-30T00:13:18-03:00] current throughput: 19 RPS
-[2023-09-30T00:13:19-03:00] current throughput: 23 RPS
-[2023-09-30T00:13:20-03:00] current throughput: 23 RPS
-[2023-09-30T00:13:21-03:00] current throughput: 23 RPS
-[2023-09-30T00:13:22-03:00] current throughput: 22 RPS
-[2023-09-30T00:13:23-03:00] current throughput: 24 RPS
-[2023-09-30T00:13:24-03:00] current throughput: 22 RPS
-[2023-09-30T00:13:25-03:00] current throughput: 23 RPS
-[2023-09-30T00:13:26-03:00] current throughput: 23 RPS
-[2023-09-30T00:13:27-03:00] current throughput: 23 RPS
-[2023-09-30T00:13:28-03:00] current throughput: 29 RPS
-[2023-09-30T00:13:29-03:00] current throughput: 32 RPS
-[2023-09-30T00:13:30-03:00] current throughput: 34 RPS
-[2023-09-30T00:13:31-03:00] current throughput: 32 RPS
-[2023-09-30T00:13:32-03:00] current throughput: 33 RPS
-[2023-09-30T00:13:33-03:00] current throughput: 33 RPS
-[2023-09-30T00:13:34-03:00] current throughput: 33 RPS
-[2023-09-30T00:13:35-03:00] current throughput: 33 RPS
-[2023-09-30T00:13:36-03:00] current throughput: 32 RPS
-[2023-09-30T00:13:37-03:00] current throughput: 33 RPS
-[2023-09-30T00:13:38-03:00] current throughput: 38 RPS
-[2023-09-30T00:13:39-03:00] current throughput: 44 RPS
-[2023-09-30T00:13:40-03:00] current throughput: 42 RPS
-[2023-09-30T00:13:41-03:00] current throughput: 43 RPS
-[2023-09-30T00:13:42-03:00] current throughput: 43 RPS
-[2023-09-30T00:13:43-03:00] current throughput: 43 RPS
-[2023-09-30T00:13:44-03:00] current throughput: 42 RPS
-[2023-09-30T00:13:45-03:00] current throughput: 44 RPS
-[2023-09-30T00:13:46-03:00] current throughput: 42 RPS
-[2023-09-30T00:13:47-03:00] current throughput: 43 RPS
-[2023-09-30T00:13:48-03:00] current throughput: 47 RPS
-[2023-09-30T00:13:49-03:00] current throughput: 50 RPS
-[2023-09-30T00:13:50-03:00] current throughput: 49 RPS
-[2023-09-30T00:13:51-03:00] current throughput: 51 RPS
-[2023-09-30T00:13:52-03:00] current throughput: 50 RPS
-[2023-09-30T00:13:53-03:00] current throughput: 50 RPS
-[2023-09-30T00:13:54-03:00] current throughput: 49 RPS
-[2023-09-30T00:13:55-03:00] current throughput: 51 RPS
-[2023-09-30T00:13:56-03:00] current throughput: 50 RPS
+[2023-09-30T00:11:53-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:11:54-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:11:55-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:11:56-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:11:57-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:11:58-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:11:59-03:00] throughput in the last 1s: 1 RPS
+[2023-09-30T00:12:00-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:01-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:02-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:03-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:04-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:05-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:06-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:07-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:08-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:09-03:00] throughput in the last 1s: 1 RPS
+[2023-09-30T00:12:10-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:11-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:12-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:13-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:14-03:00] throughput in the last 1s: 1 RPS
+[2023-09-30T00:12:15-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:16-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:17-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:18-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:19-03:00] throughput in the last 1s: 1 RPS
+[2023-09-30T00:12:20-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:21-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:22-03:00] throughput in the last 1s: 1 RPS
+[2023-09-30T00:12:23-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:24-03:00] throughput in the last 1s: 1 RPS
+[2023-09-30T00:12:25-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:26-03:00] throughput in the last 1s: 1 RPS
+[2023-09-30T00:12:27-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:28-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:29-03:00] throughput in the last 1s: 1 RPS
+[2023-09-30T00:12:30-03:00] throughput in the last 1s: 1 RPS
+[2023-09-30T00:12:31-03:00] throughput in the last 1s: 1 RPS
+[2023-09-30T00:12:32-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:33-03:00] throughput in the last 1s: 1 RPS
+[2023-09-30T00:12:34-03:00] throughput in the last 1s: 1 RPS
+[2023-09-30T00:12:35-03:00] throughput in the last 1s: 1 RPS
+[2023-09-30T00:12:36-03:00] throughput in the last 1s: 1 RPS
+[2023-09-30T00:12:37-03:00] throughput in the last 1s: 0 RPS
+[2023-09-30T00:12:38-03:00] throughput in the last 1s: 1 RPS
+[2023-09-30T00:12:39-03:00] throughput in the last 1s: 1 RPS
+[2023-09-30T00:12:40-03:00] throughput in the last 1s: 2 RPS
+[2023-09-30T00:12:41-03:00] throughput in the last 1s: 2 RPS
+[2023-09-30T00:12:42-03:00] throughput in the last 1s: 1 RPS
+[2023-09-30T00:12:43-03:00] throughput in the last 1s: 2 RPS
+[2023-09-30T00:12:44-03:00] throughput in the last 1s: 2 RPS
+[2023-09-30T00:12:45-03:00] throughput in the last 1s: 1 RPS
+[2023-09-30T00:12:46-03:00] throughput in the last 1s: 2 RPS
+[2023-09-30T00:12:47-03:00] throughput in the last 1s: 1 RPS
+[2023-09-30T00:12:48-03:00] throughput in the last 1s: 2 RPS
+[2023-09-30T00:12:49-03:00] throughput in the last 1s: 4 RPS
+[2023-09-30T00:12:50-03:00] throughput in the last 1s: 3 RPS
+[2023-09-30T00:12:51-03:00] throughput in the last 1s: 3 RPS
+[2023-09-30T00:12:52-03:00] throughput in the last 1s: 3 RPS
+[2023-09-30T00:12:53-03:00] throughput in the last 1s: 3 RPS
+[2023-09-30T00:12:54-03:00] throughput in the last 1s: 4 RPS
+[2023-09-30T00:12:55-03:00] throughput in the last 1s: 3 RPS
+[2023-09-30T00:12:56-03:00] throughput in the last 1s: 3 RPS
+[2023-09-30T00:12:57-03:00] throughput in the last 1s: 3 RPS
+[2023-09-30T00:12:58-03:00] throughput in the last 1s: 5 RPS
+[2023-09-30T00:12:59-03:00] throughput in the last 1s: 7 RPS
+[2023-09-30T00:13:00-03:00] throughput in the last 1s: 6 RPS
+[2023-09-30T00:13:01-03:00] throughput in the last 1s: 7 RPS
+[2023-09-30T00:13:02-03:00] throughput in the last 1s: 6 RPS
+[2023-09-30T00:13:03-03:00] throughput in the last 1s: 6 RPS
+[2023-09-30T00:13:04-03:00] throughput in the last 1s: 7 RPS
+[2023-09-30T00:13:05-03:00] throughput in the last 1s: 6 RPS
+[2023-09-30T00:13:06-03:00] throughput in the last 1s: 7 RPS
+[2023-09-30T00:13:07-03:00] throughput in the last 1s: 6 RPS
+[2023-09-30T00:13:08-03:00] throughput in the last 1s: 11 RPS
+[2023-09-30T00:13:09-03:00] throughput in the last 1s: 13 RPS
+[2023-09-30T00:13:10-03:00] throughput in the last 1s: 13 RPS
+[2023-09-30T00:13:11-03:00] throughput in the last 1s: 13 RPS
+[2023-09-30T00:13:12-03:00] throughput in the last 1s: 13 RPS
+[2023-09-30T00:13:13-03:00] throughput in the last 1s: 12 RPS
+[2023-09-30T00:13:14-03:00] throughput in the last 1s: 13 RPS
+[2023-09-30T00:13:15-03:00] throughput in the last 1s: 13 RPS
+[2023-09-30T00:13:16-03:00] throughput in the last 1s: 13 RPS
+[2023-09-30T00:13:17-03:00] throughput in the last 1s: 13 RPS
+[2023-09-30T00:13:18-03:00] throughput in the last 1s: 19 RPS
+[2023-09-30T00:13:19-03:00] throughput in the last 1s: 23 RPS
+[2023-09-30T00:13:20-03:00] throughput in the last 1s: 23 RPS
+[2023-09-30T00:13:21-03:00] throughput in the last 1s: 23 RPS
+[2023-09-30T00:13:22-03:00] throughput in the last 1s: 22 RPS
+[2023-09-30T00:13:23-03:00] throughput in the last 1s: 24 RPS
+[2023-09-30T00:13:24-03:00] throughput in the last 1s: 22 RPS
+[2023-09-30T00:13:25-03:00] throughput in the last 1s: 23 RPS
+[2023-09-30T00:13:26-03:00] throughput in the last 1s: 23 RPS
+[2023-09-30T00:13:27-03:00] throughput in the last 1s: 23 RPS
+[2023-09-30T00:13:28-03:00] throughput in the last 1s: 29 RPS
+[2023-09-30T00:13:29-03:00] throughput in the last 1s: 32 RPS
+[2023-09-30T00:13:30-03:00] throughput in the last 1s: 34 RPS
+[2023-09-30T00:13:31-03:00] throughput in the last 1s: 32 RPS
+[2023-09-30T00:13:32-03:00] throughput in the last 1s: 33 RPS
+[2023-09-30T00:13:33-03:00] throughput in the last 1s: 33 RPS
+[2023-09-30T00:13:34-03:00] throughput in the last 1s: 33 RPS
+[2023-09-30T00:13:35-03:00] throughput in the last 1s: 33 RPS
+[2023-09-30T00:13:36-03:00] throughput in the last 1s: 32 RPS
+[2023-09-30T00:13:37-03:00] throughput in the last 1s: 33 RPS
+[2023-09-30T00:13:38-03:00] throughput in the last 1s: 38 RPS
+[2023-09-30T00:13:39-03:00] throughput in the last 1s: 44 RPS
+[2023-09-30T00:13:40-03:00] throughput in the last 1s: 42 RPS
+[2023-09-30T00:13:41-03:00] throughput in the last 1s: 43 RPS
+[2023-09-30T00:13:42-03:00] throughput in the last 1s: 43 RPS
+[2023-09-30T00:13:43-03:00] throughput in the last 1s: 43 RPS
+[2023-09-30T00:13:44-03:00] throughput in the last 1s: 42 RPS
+[2023-09-30T00:13:45-03:00] throughput in the last 1s: 44 RPS
+[2023-09-30T00:13:46-03:00] throughput in the last 1s: 42 RPS
+[2023-09-30T00:13:47-03:00] throughput in the last 1s: 43 RPS
+[2023-09-30T00:13:48-03:00] throughput in the last 1s: 47 RPS
+[2023-09-30T00:13:49-03:00] throughput in the last 1s: 50 RPS
+[2023-09-30T00:13:50-03:00] throughput in the last 1s: 49 RPS
+[2023-09-30T00:13:51-03:00] throughput in the last 1s: 51 RPS
+[2023-09-30T00:13:52-03:00] throughput in the last 1s: 50 RPS
+[2023-09-30T00:13:53-03:00] throughput in the last 1s: 50 RPS
+[2023-09-30T00:13:54-03:00] throughput in the last 1s: 49 RPS
+[2023-09-30T00:13:55-03:00] throughput in the last 1s: 51 RPS
+[2023-09-30T00:13:56-03:00] throughput in the last 1s: 50 RPS

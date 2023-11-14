@@ -17,7 +17,7 @@ func NewCalculator() *Calculator {
 func (c *Calculator) Calculate(every time.Duration) {
 	for range time.Tick(every) {
 		throughput := c.calculate(every)
-		fmt.Printf("[%s] current throughput: %.2f RPS\n", time.Now().Format(time.RFC3339), throughput)
+		fmt.Printf("[%s] throughput in the last %s: %.2f RPS\n", time.Now().Format(time.RFC3339), every, throughput)
 		c.reset()
 	}
 }
