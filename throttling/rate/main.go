@@ -9,7 +9,7 @@ import (
 )
 
 var (
-	limit = rate.Limit(1 * time.Second)
+	limit = rate.Limit(1 /* RPS */)
 	burst = 1
 )
 
